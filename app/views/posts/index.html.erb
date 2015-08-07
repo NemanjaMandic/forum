@@ -1,3 +1,6 @@
-<h1>Ovo je indeks</h1>
+<% @posts.each do |post| %>
+  <h2><%= post.title %></h2>
+  <p>Published at: <%= time_ago_in_words(post.created_at) %></p>
+<% end %>
 
-****************** 17:35 *************************
+<%= link_to "Novi Post", new_post_path %>
