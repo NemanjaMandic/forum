@@ -1,15 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Workspace</title>
+  <title>Forum</title>
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css" rel="stylesheet"></link>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-       <p class="notice"><%= notice %></p>
-       <p class="alert"><%= alert %></p>
-<%= yield %>
+  <!-- NAVIGACIJA -->
+  <header class="main_header clearfix">
+      <div class="wrapper">
+          <div id="logo">
+              <p><%= link_to "rails forum", root_path %></p>
+          </div>
+          <div id="buttons">
+          <% if user_signed_in? %>
+             <%= link_to "Novi Post", new_post_path %>
+             <%= link_to "Odjavi Se", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "Registruj Se", new_user_registration_path %> 
+            <%= link_to "Uloguj Se", new_user_session_path %> 
+            <% end %>
+      </div>
+      </div>
+      
+  </header>
+  <!--END NAVIGACIJA -->
+   
+      <div class="wrapper">
+         <p class="notice"><%= notice %></p>
+         <p class="alert"><%= alert %></p>
+      </div>
+      
+     <div class="wrapper">
+       <%= yield %>
+     </div>
 
 </body>
 </html>
