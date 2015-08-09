@@ -1,7 +1,11 @@
+<div id="posts">
 <% @posts.each do |post| %>
-  <h2><%= link_to post.title, post %></h2>
-  <p>Published at: <%= time_ago_in_words(post.created_at) %>  </p>
-  <p>by: <%= post.user.email %></p>
+<div class="post">
+   <h2 class="title"><%= link_to post.title, post %></h2>
+  <p class="date">Published at: <%= time_ago_in_words(post.created_at) %>  by: <%= post %></p>
+  
+</div>
+ 
 <% end %>
-
-************************* 43:35 *******************
+</div>
+************************* 1:00 *******************

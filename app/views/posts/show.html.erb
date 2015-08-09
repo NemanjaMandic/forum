@@ -1,6 +1,8 @@
-<h1><%= @post.title %></h1>
-<p><%= @post.content %></p>
-
-<%= link_to "Izmeni", edit_post_path(@post) %>
-<%= link_to "Obrisi", post_path(@post), method: :delete, data: { confirm: "Jesi siguran?" } %>
-<%= link_to "Vrati se", root_path %>
+<div id="post_content">
+    <h1><%= @post.title %></h1>
+    <p><%= @post.content %></p>
+    
+    <%= link_to "Izmeni", edit_post_path(@post) %>
+    <%= link_to "Obrisi", post_path(@post), method: :delete, data: { confirm: "Jesi siguran?" } %>
+    <%= link_to "Vrati se", root_path %>
+</div>
