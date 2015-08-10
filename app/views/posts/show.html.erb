@@ -2,6 +2,13 @@
     <h1><%= @post.title %></h1>
     <p><%= @post.content %></p>
     
+    <div id="comments">
+        <h2><%= @post.comments.count %></h2>
+       <%= render @post.comments %>
+        
+        <h3>Reply to post</h3>
+        <%= render "comments/form" %>
+    </div>
     <%= link_to "Izmeni", edit_post_path(@post) %>
     <%= link_to "Obrisi", post_path(@post), method: :delete, data: { confirm: "Jesi siguran?" } %>
     <%= link_to "Vrati se", root_path %>

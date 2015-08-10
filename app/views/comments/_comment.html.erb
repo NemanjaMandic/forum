@@ -1,0 +1,6 @@
+<div class="comment">
+    <p><%= comment.comment %></p>
+    <p><%= comment.user %></p>
+    <p><%= link_to "Izmeni", edit_post_comment_path(comment.post, comment) %> </p>
+    <%= link_to "Obrisi Komentar", [comment.post, comment], method: :delete, data: { confirm: "Jesi siguran? "} %>
+</div>
